@@ -4,9 +4,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./assets');
+import('./assets');
 
-window.Vue = require('vue');
+import Vue from 'vue'
 
 /**
  * The following block of code may be used to automatically register your
@@ -27,9 +27,9 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { routes } from './routes'
+import store from './store'
 
 Vue.use(VueRouter)
 
@@ -43,5 +43,6 @@ const router = new VueRouter({
 const app = new Vue({
     el: '#app',
     components: { App },
-    router
+    router,
+    store
 });
